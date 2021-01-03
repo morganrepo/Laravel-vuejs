@@ -8,13 +8,13 @@
             </div>
         </div>
         <div class="panel-body">
-            <div class="filter" v-if="showFilter">
+            <div class="filter" v-if="showFilters">
                 <div class="filter-column">
                     <select class="form-control" v-model="params.search_column">
                         <option v-for="column in filter" :value="column">{{column}}</option>
                     </select>
                 </div>
-                <div class="filter-operator">
+                <div class="filter-operators">
                     <select class="form-control" v-model="params.search_operator">
                         <option v-for="(value, key) in operators" :value="key">{{value}}</option>
                     </select>
@@ -28,7 +28,7 @@
                         @keyup.enter="fetchData" placeholder="Search">
                 </div>
                 <div class="filter-btn">
-                    <button class="btn btn-primary btn-sm btn-block" @click="fetchData">Filter</button>
+                    <button class="btn btn-secondary btn-sm btn-block" @click="fetchData">Filter</button>
                 </div>
             </div>
             <table class="table table-striped">
@@ -38,8 +38,8 @@
                             <div class="dataviewer-th" @click="sort(item.key)" v-if="item.sort">
                                 <span>{{item.title}}</span>
                                 <span v-if="params.column === item.key">
-                                    <span v-if="params.direction === 'asc'">&#x25B2;</span>
-                                    <span v-else>&#x25BC;</span>
+                                    <span v-if="params.direction === 'asc'">&#x25C5;</span>
+                                    <span v-else>&#x254C;</span>
                                 </span>
                             </div>
                             <div v-else>
